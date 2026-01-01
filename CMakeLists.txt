@@ -1,12 +1,11 @@
 cmake_minimum_required(VERSION 3.31)
-project(Calendar VERSION 0.8.0 LANGUAGES CXX)
+project(Calendars VERSION 0.8.0 LANGUAGES CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(CALENDAR_BUILD_TESTS "Build Calendar tests" OFF)
-
 
 set(SOURCES
     src/lib/calendar.cpp
@@ -48,7 +47,7 @@ if(CALENDAR_BUILD_TESTS)
     set(TEST_SOURCES src/test/main.cpp)
 
     add_executable(calendar_tests ${TEST_SOURCES})
-    target_link_libraries(calendar_tests PRIVATE Calendar gtest_main)
+    target_link_libraries(calendar_tests PRIVATE Calendars gtest_main)
 
     include(GoogleTest)
     gtest_discover_tests(calendar_tests)
