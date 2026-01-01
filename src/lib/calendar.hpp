@@ -34,6 +34,7 @@ public:
 
     bool Get_is_current_yeat_leap() const {return this->is_current_year_leap;};
 
+    virtual ~Calendar() = default;
 protected:
 
     virtual constexpr bool Is_year_leap(unsigned long long year) = 0;
